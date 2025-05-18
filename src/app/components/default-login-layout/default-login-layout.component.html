@@ -1,0 +1,26 @@
+<main>
+    <section class="form-section">
+        <img src="/assets/png/enigma do milenio.png" height="50px"/>
+       <h2>{{ title }}</h2>
+       <ng-content></ng-content> <!--Pega o que está no component login e injeta nesse campo-->
+       <div class="btn-wrapper">
+            <button 
+                class="btn-primary" 
+                (click)="submit()" 
+                [disabled]="disablePrimaryBtn"
+            > 
+                {{ primaryBtnText }}
+            </button><!--Quando o botao primary for clicado, chamaremos a fn submit do arquivo ts-->
+            <div class="divider">
+                <div></div>
+                <span>Ou</span>
+                <div></div>
+            </div>
+            <button class="btn-secondary" (click)="navigate()">{{ secondaryBtnText }}</button>
+       </div>
+    </section>
+    <section class="main-section">
+        <h1>Venha ser o Rei dos Jogos!</h1>
+        <img src="/assets/png/logo.png"/>
+    </section>
+</main>

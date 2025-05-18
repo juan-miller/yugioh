@@ -1,0 +1,31 @@
+<!--Esses sao os textos que aparecem nos botoes e formulario de login. Serão importandos a partir da login.components.ts, já que serão botoes dinamicos-->
+<app-default-login-layout
+    title="Entre na sua conta"
+    primaryBtnText="Entre agora"
+    secondaryBtnText="Cadastre-se"
+    (submit)="submit()"
+    (navigate)="navigate()"
+    [disablePrimaryBtn]="!loginForm.valid"
+>
+    <form [formGroup]="loginForm">
+        <!--Setado na pagina de login ts-->
+        <app-primary-input
+            formControlName="email"
+            inputName="email"
+            type="email"
+            label="Email"
+            placeholder="TADS@gmail.com"
+        >
+            <img src="/assets/svg/email-icon.svg"/>
+        </app-primary-input>
+        <app-primary-input
+            formControlName="password"
+            inputName="password"
+            type="password"
+            label="Sua senha"
+        >
+        <img src="/assets/svg/password-icon.svg"/>
+    </app-primary-input>
+    <span>Esqueci a senha</span>
+    </form>
+</app-default-login-layout>
